@@ -3,6 +3,14 @@ const contentElement = document.getElementById("content");
 
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || {};
 
+function showNotification(message) {
+  notification.textContent = message;
+  notification.classList.add("show");
+  setTimeout(() => {
+    notification.classList.remove("show");
+  }, 5000);
+}
+
 function displayWishlist() {
   const wishlistBooks = Object.values(wishlist);
   contentElement.innerHTML = `
@@ -49,6 +57,7 @@ function displayWishlist() {
 }
 
 function removeFromWishlist(id) {
+  showNotification(`${wishlist[id].title} removed from wishlist`);
   delete wishlist[id];
   localStorage.setItem("wishlist", JSON.stringify(wishlist));
   displayWishlist();
