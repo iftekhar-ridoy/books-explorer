@@ -27,7 +27,7 @@ nav {
   background-color: #fff;
   color: #333;
   padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.025);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 nav ul {
@@ -405,6 +405,7 @@ a {
 }
 
 .notification {
+  min-width: 335px;
   position: fixed;
   top: 10px;
   left: 50%;
